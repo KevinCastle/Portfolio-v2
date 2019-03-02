@@ -1,0 +1,95 @@
+#logo {
+    position: fixed;
+    top: 35px;
+    left: 50px;
+    width: 150px;
+    height: 75px;
+    background: url("https://via.placeholder.com/150x75/DA6E77/FFFFFF?text=Need+a+logo");
+}
+
+#navbar {
+    position: fixed;
+    right: 1em;
+    top: 35px;
+
+    ul {
+        li {
+            display: inline;
+            padding-right: 4em;
+            font-family: $shadows;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 1.2em;
+            letter-spacing: 1.25px;
+            cursor: pointer;
+            transition-duration: 0.2s;
+
+            span {
+                color: rgba(255, 255, 255, 0.5);
+                transition-duration: 0.5s;
+            }
+
+            &:first-child:hover {
+                color: #fff;
+                @extend %stroke;
+
+                span {
+                    color: $lightBlue;
+                }
+            }
+
+            &:nth-child(2):hover {
+                color: #fff;
+                @extend %stroke;
+
+                span {
+                    color: $red;
+                }
+            }
+
+            &:nth-child(3):hover {
+                color: #fff;
+                @extend %stroke;
+
+                span {
+                    color: #7d62c4;
+                }
+            }
+        }
+    }
+}
+
+#networks {
+    position: fixed;
+    right: 3em;
+    bottom: 35px;
+
+    ul {
+        list-style-type: none;
+        text-align: center;
+        color: #fff;
+        font-size: 1.6em;
+    }
+
+    li {
+        padding-bottom: 10px;
+        cursor: pointer;
+        transition-duration: 0.5s;
+
+        &:nth-child(4n+1) {
+            font-size: 1.8em;
+            cursor: default;
+        }
+
+        &:nth-child(2):hover {
+            color: #ffc02f;
+        }
+
+        &:nth-child(3):hover {
+            color: #007AB6;
+        }
+
+        &:nth-child(4):hover {
+            color: #EA4C89;
+        }
+    }
+}

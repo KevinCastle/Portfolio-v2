@@ -1,0 +1,140 @@
+@import 'variables';
+@import 'fixed';
+
+#about {
+    // background: url(/Portfolio/img/Diamonds@3x.png) no-repeat top center, url(/Portfolio/img/Background@3x.png) no-repeat top;
+    background: url(/Portfolio/img/Background@3x.png) no-repeat top;
+    // background-size: 50%, 100%;
+    background-size: 100%;
+    height: 1175px;
+    top: 0;
+}
+
+.grid-container {
+
+    display: grid;
+    width: 65%;
+    margin: auto;
+    grid-template-areas:
+        'title title title avatar '
+        'subtitle subtitle subtitle avatar'
+        'description description description avatar'
+        'feature feature feature avatar'
+        'button button button avatar';
+    padding: 170px 10px;
+    grid-column-gap: 3.1em;
+
+}
+
+.avatar {
+    grid-area: avatar;
+
+    img {
+        object-fit: cover;
+        border-radius: 50%;
+        width: 262px;
+        height: 262px;
+        transition: box-shadow 0.8s;
+
+        &:hover {
+            @include border(20pt);
+        }
+    }
+}
+
+.maintitle {
+    font-size: 3em;
+    width: 100%;
+    line-height: 1;
+    font-family: $archivo;
+    color: #FFF;
+    grid-area: title;
+}
+
+.subtitle {
+    grid-area: subtitle;
+    text-align: left !important;
+    font-size: 1.5em;
+    margin-top: -1vh;
+    @extend %laila;
+}
+
+.desc {
+    grid-area: description;
+    margin: 40px 20px 0px 0px;
+    font-size: 1.15em;
+    @extend %paragraph;
+}
+
+.feature {
+    grid-area: feature;
+    display: block;
+    font-size: 1.5em;
+    @extend %laila;
+
+    ul {
+        display: flex;
+        justify-content: space-between;
+
+        li {
+            display: inline;
+            list-style-type: none;
+        }
+    }
+
+}
+
+.contactbtn {
+    grid-area: button;
+    margin-top: 30px;
+    margin-left: 10px;
+
+    button {
+        width: 35%;
+        background-color: $dark;
+        border: none;
+        border-radius: 3em;
+        font-family: $sans;
+        color: #FFF;
+        text-transform: uppercase;
+        padding: 20px;
+        text-align: center;
+        display: inline-block;
+        font-size: 1.3em;
+        cursor: pointer;
+        transition: 1seg;
+
+        &:hover {
+
+            span {
+                display: inline-block;
+                animation: 0.4s 3 spin;
+                animation-timing-function: linear
+            }
+        }
+    }
+
+}
+
+  @keyframes spin {
+      0% {
+          transform: rotate(0deg);
+      }
+
+      25% {
+          transform: rotate(-15deg);
+      }
+
+      50% {
+          transform: rotate(0deg);
+      }
+
+            75% {
+                transform: rotate(7deg);
+            }
+
+
+      100% {
+          transform: rotate(0deg);
+      }
+  }

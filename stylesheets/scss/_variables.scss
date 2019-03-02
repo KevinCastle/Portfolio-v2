@@ -1,0 +1,49 @@
+$archivo: 'Archivo Black',
+sans-serif;
+$sans: 'Source Sans Pro',
+sans-serif;
+$laila: 'Laila',
+serif;
+$shadows: 'Shadows Into Light Two',
+cursive;
+
+$orange: #ff7142; //subtitles
+
+$pink: #da6e77; // "Projects" title and links
+
+$red: #c12f2f; // triangles (not in use)
+
+$grey: #3e3e3e; //color font contact me
+
+$dark: #251730; // "Projects" background
+
+$dusk: #4b3c70; // "Contact" title and About background
+
+$fadedBlue: #5e90be; // Pentagons (not in use)
+
+$lightBlue: #6cc8f2; // rombus and navbar
+
+$robins: #70d8ff; // "About" title
+
+$pale: #E6EBF1; // Contact me background
+
+%paragraph {
+    font-family: $sans;
+    text-align: justify !important;
+    color: #FFF;
+    line-height: 1.5;
+}
+
+%laila {
+    font-family: $laila;
+    color: $orange;
+    font-weight: 600;
+}
+
+%stroke {
+    text-shadow: 1px 1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, -1px -1px 0 #000000, 1px 0px 0 #000000, 0px 1px 0 #000000, -1px 0px 0 #000000, 0px -1px 0 #000000;
+}
+
+@mixin border($pt) {
+    box-shadow: 0 0 0 $pt rgba(230, 235, 241, 0.2);
+}
