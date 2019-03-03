@@ -1,13 +1,32 @@
 @import 'variables';
 @import 'fixed';
 
+body{
+    background-color: black;
+}
+
 #about {
     // background: url(/Portfolio/img/Diamonds@3x.png) no-repeat top center, url(/Portfolio/img/Background@3x.png) no-repeat top;
     background: url(/Portfolio/img/Background@3x.png) no-repeat top;
     // background-size: 50%, 100%;
     background-size: 100%;
-    height: 1175px;
     top: 0;
+    pointer-events: none;
+
+}
+
+.wrapper{
+    position: relative;
+}
+
+.sectionName {
+    position: absolute;
+    top: 80px;
+    left: 170px;
+    transform: rotate(-20deg);
+    font-family: $shadows;
+    font-size: 2.3em;
+    letter-spacing: 3px;
 }
 
 .grid-container {
@@ -20,6 +39,7 @@
         'subtitle subtitle subtitle avatar'
         'description description description avatar'
         'feature feature feature avatar'
+        'description2 description2 description2 avatar'
         'button button button avatar';
     padding: 170px 10px;
     grid-column-gap: 3.1em;
@@ -66,6 +86,13 @@
     @extend %paragraph;
 }
 
+.d[esc2 {
+    grid-area: description2;
+    font-size: 1.15em;
+    margin-left: 10px;
+    @extend %paragraph;
+}
+
 .feature {
     grid-area: feature;
     display: block;
@@ -86,11 +113,10 @@
 
 .contactbtn {
     grid-area: button;
-    margin-top: 30px;
     margin-left: 10px;
 
     button {
-        width: 35%;
+        width: 180px;
         background-color: $dark;
         border: none;
         border-radius: 3em;
@@ -102,9 +128,14 @@
         display: inline-block;
         font-size: 1.3em;
         cursor: pointer;
-        transition: 1seg;
+        transition-property: box-shadow;
+        transition-duration: 0.2s;
 
         &:hover {
+            -webkit-box-shadow:inset 0px 0px 0px 7px $pale;
+            -moz-box-shadow:inset 0px 0px 0px 7px $pale;
+            box-shadow:inset 0px 0px 0px 7px $pale;
+            font-weight: 600;
 
             span {
                 display: inline-block;
@@ -116,25 +147,3 @@
 
 }
 
-  @keyframes spin {
-      0% {
-          transform: rotate(0deg);
-      }
-
-      25% {
-          transform: rotate(-15deg);
-      }
-
-      50% {
-          transform: rotate(0deg);
-      }
-
-            75% {
-                transform: rotate(7deg);
-            }
-
-
-      100% {
-          transform: rotate(0deg);
-      }
-  }

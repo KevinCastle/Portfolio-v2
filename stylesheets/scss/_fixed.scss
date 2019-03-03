@@ -1,14 +1,15 @@
 #logo {
-    position: fixed;
+    @extend %fix;
     top: 35px;
     left: 50px;
-    width: 150px;
-    height: 75px;
-    background: url("https://via.placeholder.com/150x75/DA6E77/FFFFFF?text=Need+a+logo");
+    width: 100px;
+    height: 100px;
+    background: url(/Portfolio/img/logo.png);
+    background-size: 100%;
 }
 
 #navbar {
-    position: fixed;
+    @extend %fix;
     right: 1em;
     top: 35px;
 
@@ -59,7 +60,7 @@
 }
 
 #networks {
-    position: fixed;
+    @extend %fix;
     right: 3em;
     bottom: 35px;
 
