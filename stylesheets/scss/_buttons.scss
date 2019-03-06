@@ -1,0 +1,31 @@
+%contactbtn {
+    button {
+        width: 180px;
+        background-color: $dark;
+        border: none;
+        border-radius: 3em;
+        font-family: $sans;
+        color: #FFF;
+        text-transform: uppercase;
+        padding: 20px;
+        text-align: center;
+        display: inline-block;
+        font-size: 1.3em;
+        cursor: pointer;
+        transition-property: box-shadow;
+        transition-duration: 0.2s;
+
+        &:hover {
+            -webkit-box-shadow: inset 0px 0px 0px 7px $pale;
+            -moz-box-shadow: inset 0px 0px 0px 7px $pale;
+            box-shadow: inset 0px 0px 0px 7px $pale;
+            font-weight: 600;
+
+            span {
+                display: inline-block;
+                animation: 0.4s 3 spin;
+                animation-timing-function: linear
+            }
+        }
+    }
+}

@@ -1,8 +1,14 @@
 @import 'variables';
 @import 'fixed';
+@import 'buttons';
 
-body{
+body {
     background-color: black;
+    font-size: 1.1vw;
+}
+
+.wrapper {
+    position: relative;
 }
 
 #about {
@@ -10,29 +16,22 @@ body{
     background: url(/Portfolio/img/Background@3x.png) no-repeat top;
     // background-size: 50%, 100%;
     background-size: 100%;
-    top: 0;
-    pointer-events: none;
 
-}
-
-.wrapper{
-    position: relative;
 }
 
 .sectionName {
     position: absolute;
-    top: 80px;
-    left: 170px;
+    left: 7vw;
     transform: rotate(-20deg);
     font-family: $shadows;
     font-size: 2.3em;
     letter-spacing: 3px;
 }
 
-.grid-container {
+.grid-about {
 
     display: grid;
-    width: 65%;
+    width: 70vw;
     margin: auto;
     grid-template-areas:
         'title title title avatar '
@@ -41,7 +40,7 @@ body{
         'feature feature feature avatar'
         'description2 description2 description2 avatar'
         'button button button avatar';
-    padding: 170px 10px;
+    padding: 13vw 0 15vw 0;
     grid-column-gap: 3.1em;
 
 }
@@ -52,8 +51,8 @@ body{
     img {
         object-fit: cover;
         border-radius: 50%;
-        width: 262px;
-        height: 262px;
+        width: 242px;
+        height: 242px;
         transition: box-shadow 0.8s;
 
         &:hover {
@@ -63,18 +62,14 @@ body{
 }
 
 .maintitle {
-    font-size: 3em;
+    @extend %title;
+    font-size: 3.5em;
     width: 100%;
-    line-height: 1;
-    font-family: $archivo;
-    color: #FFF;
     grid-area: title;
 }
 
 .subtitle {
     grid-area: subtitle;
-    text-align: left !important;
-    font-size: 1.5em;
     margin-top: -1vh;
     @extend %laila;
 }
@@ -86,7 +81,7 @@ body{
     @extend %paragraph;
 }
 
-.d[esc2 {
+.desc2 {
     grid-area: description2;
     font-size: 1.15em;
     margin-left: 10px;
@@ -96,7 +91,6 @@ body{
 .feature {
     grid-area: feature;
     display: block;
-    font-size: 1.5em;
     @extend %laila;
 
     ul {
@@ -114,36 +108,150 @@ body{
 .contactbtn {
     grid-area: button;
     margin-left: 10px;
+    @extend %contactbtn;
+}
 
-    button {
-        width: 180px;
-        background-color: $dark;
-        border: none;
-        border-radius: 3em;
-        font-family: $sans;
-        color: #FFF;
-        text-transform: uppercase;
-        padding: 20px;
-        text-align: center;
-        display: inline-block;
-        font-size: 1.3em;
-        cursor: pointer;
-        transition-property: box-shadow;
-        transition-duration: 0.2s;
+#projects {
+    .wrapper {
+        top: -120px;
+        background-size: 100%;
+        z-index: -1;
+        padding-top: 120px;
+        background: $dark;
+    }
 
-        &:hover {
-            -webkit-box-shadow:inset 0px 0px 0px 7px $pale;
-            -moz-box-shadow:inset 0px 0px 0px 7px $pale;
-            box-shadow:inset 0px 0px 0px 7px $pale;
-            font-weight: 600;
+    .sectionName {
+        top: 200px;
+    }
+}
 
-            span {
-                display: inline-block;
-                animation: 0.4s 3 spin;
-                animation-timing-function: linear
+.grid-projectsText {
+
+    display: grid;
+    width: 65%;
+    margin: auto;
+    grid-template-areas:
+        'title skills'
+        'description list';
+    padding: 13vw 15vw;
+    grid-column-gap: 8em;
+    justify-content: space-between;
+}
+
+
+.title {
+    grid-area: title;
+    @extend %title;
+    font-size: 2.5em;
+}
+
+.skill {
+    grid-area: skills;
+    @extend %laila;
+    font-size: 1.8em;
+}
+
+.skillList {
+    grid-area: list;
+    font-family: laila;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #FFF;
+
+    li {
+        padding-bottom: 10px;
+    }
+}
+
+#projectsTop {
+    ul {
+        li {
+            position: relative;
+            height: 35vh;
+            background-color: rgba(124, 115, 130, 0.51);
+            margin-bottom: 10px;
+
+            &:nth-child(odd) {
+                p {
+                    position: absolute;
+                    font-family: $archivo;
+                    color: #fff;
+                    font-size: 16px;
+                    margin: 0;
+                    left: 42%;
+                    top: 12%;
+                }
+
+                h1 {
+                    position: absolute;
+                    font-family: $kalam;
+                    color: #fff;
+                    font-size: 49px;
+                    margin: 0;
+                    left: 45%;
+                    top: 20%;
+                }
+
+                h2 {
+                    position: absolute;
+                    font-family: $archivo;
+                    color: $dark;
+                    font-size: 42px;
+                    right: 1%;
+                    bottom: 4%;
+                    margin: 0;
+                }
+                img {
+                    width: 22%;
+                    position: absolute;
+                    top: 5%;
+                    right: 60%;
+                }
+            }
+
+            &:nth-child(even) {
+                p {
+                    position: absolute;
+                    @extend %title;
+                    font-size: 16px;
+                    margin: 0;
+                    right: 47%;
+                    top: 12%;
+                }
+
+                h1 {
+                    position: absolute;
+                    font-family: $kalam;
+                    color: #fff;
+                    font-size: 49px;
+                    margin: 0;
+                    right:50%;
+                    top: 20%;
+                }
+
+                h2 {
+                    position: absolute;
+                    @extend %title;
+                    color: $dark;
+                    font-size: 42px;
+                    left: 1%;
+                    bottom: 4%;
+                    margin: 0;
+                }
+                img {
+                    width: 45vh;
+                    position: absolute;
+                    top: 5%;
+                    left: 55%;
+
+                    &:nth-child(odd){
+                        width: 29vh;
+                        
+                        top: -8%;
+                        left: 70%;
+                    }
+                }
             }
         }
     }
-
 }
-

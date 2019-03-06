@@ -1,11 +1,8 @@
-$archivo: 'Archivo Black',
-sans-serif;
-$sans: 'Source Sans Pro',
-sans-serif;
-$laila: 'Laila',
-serif;
-$shadows: 'Shadows Into Light Two',
-cursive;
+$archivo: 'Archivo Black', sans-serif;
+$sans: 'Source Sans Pro', sans-serif;
+$laila: 'Laila', serif;
+$shadows: 'Shadows Into Light Two', cursive;
+$kalam: 'Kalam', cursive;
 
 $orange: #ff7142; //subtitles
 
@@ -27,6 +24,13 @@ $robins: #70d8ff; // "About" title
 
 $pale: #E6EBF1; // Contact me background
 
+%title {
+    line-height: 1;
+    font-family: $archivo;
+    color: #FFF;
+    font-size:2.5em;
+}
+
 %paragraph {
     font-family: $sans;
     text-align: justify !important;
@@ -38,6 +42,7 @@ $pale: #E6EBF1; // Contact me background
     font-family: $laila;
     color: $orange;
     font-weight: 600;
+    font-size: 1.5em;
 }
 
 %stroke {
