@@ -2,9 +2,18 @@
 @import 'fixed';
 @import 'buttons';
 
+html{
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: $pale;
     font-size: 1.1vw;
+}
+
+a{
+    text-decoration: none;
+    color: unset;
 }
 
 .wrapper {
@@ -74,6 +83,10 @@ body {
     font-size: 3.5em;
     width: 100%;
     grid-area: title;
+    
+    span{
+        color: $orange;
+    }
 }
 
 .subtitle {
@@ -148,7 +161,7 @@ body {
     }
 }
 
-.grid-projectsText {
+#grid-projectsText {
 
     display: grid;
     width: 65%;
@@ -361,7 +374,7 @@ body {
     .wrapper {
         background-size: 100%;
         background: $pale;
-        padding: 13vw 14vw 2vw 13vw;
+        padding: 13vw 14vw 1vw 13vw;
 
         .sectionName {
             color: $dusk;
@@ -378,7 +391,7 @@ body {
     }
 }
 
-.contactContainer{
+#contactContainer{
     margin-top: 5vw;
     margin-bottom: 90px;
     width: 50%;
@@ -393,5 +406,6 @@ body {
 
     a{
         text-decoration: none;
+        color: $pink;
     }
  }
