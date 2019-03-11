@@ -12,13 +12,9 @@
         display: inline-block;
         font-size: 1.3em;
         cursor: pointer;
-        transition-property: box-shadow;
         transition-duration: 0.2s;
 
         &:hover {
-            -webkit-box-shadow: inset 0px 0px 0px 7px $pale;
-            -moz-box-shadow: inset 0px 0px 0px 7px $pale;
-            box-shadow: inset 0px 0px 0px 7px $pale;
             font-weight: 600;
 
             span {

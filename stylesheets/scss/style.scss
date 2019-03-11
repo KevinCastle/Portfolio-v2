@@ -3,7 +3,7 @@
 @import 'buttons';
 
 body {
-    background-color: black;
+    background-color: $pale;
     font-size: 1.1vw;
 }
 
@@ -11,21 +11,29 @@ body {
     position: relative;
 }
 
-#about {
-    // background: url(/Portfolio/img/Diamonds@3x.png) no-repeat top center, url(/Portfolio/img/Background@3x.png) no-repeat top;
-    background: url(/Portfolio/img/Background@3x.png) no-repeat top;
-    // background-size: 50%, 100%;
-    background-size: 100%;
-
-}
-
 .sectionName {
     position: absolute;
     left: 7vw;
-    transform: rotate(-20deg);
+    transform: rotate(-10deg);
     font-family: $shadows;
     font-size: 2.3em;
     letter-spacing: 3px;
+}
+
+#about {
+
+    .wrapper {
+        // background: url(/Portfolio/img/Diamonds@3x.png) no-repeat top center, url(/Portfolio/img/Background@3x.png) no-repeat top;
+        background: url(/Portfolio/img/Background@3x.png) no-repeat top;
+        // background-size: 50%, 100%;
+        background-size: 100%;
+        z-index: 1;
+
+        .sectionName {
+            color: $robins;
+            top: 120px;
+        }
+    }
 }
 
 .grid-about {
@@ -112,16 +120,31 @@ body {
 }
 
 #projects {
+    margin-top: -120px;
     .wrapper {
-        top: -120px;
         background-size: 100%;
-        z-index: -1;
-        padding-top: 120px;
+        padding-top: 40px;
         background: $dark;
     }
 
     .sectionName {
         top: 200px;
+        color: $pink;
+    }
+
+    .desc {
+        font-size: 1.4em;
+
+        &:first-letter {
+            color: $red;
+            float: left;
+            font-family: Georgia;
+            font-size: 3em;
+            line-height: 0.9em;
+            padding-top: 4px;
+            padding-right: 8px;
+            padding-left: 3px;
+        }
     }
 }
 
@@ -133,16 +156,9 @@ body {
     grid-template-areas:
         'title skills'
         'description list';
-    padding: 13vw 15vw;
+    padding: 13vw 15vw 10vw 15vw;
     grid-column-gap: 8em;
     justify-content: space-between;
-}
-
-
-.title {
-    grid-area: title;
-    @extend %title;
-    font-size: 2.5em;
 }
 
 .skill {
@@ -164,6 +180,9 @@ body {
 }
 
 #projectsTop {
+
+    padding-bottom: 20px;
+
     ul {
         li {
             position: relative;
@@ -201,11 +220,21 @@ body {
                     bottom: 4%;
                     margin: 0;
                 }
+
                 img {
                     width: 22%;
                     position: absolute;
                     top: 5%;
                     right: 60%;
+                }
+            }
+
+            &:nth-child(3) {
+                img {
+                    width: 19%;
+                    position: absolute;
+                    top: -17%;
+                    right: 57%;
                 }
             }
 
@@ -225,7 +254,7 @@ body {
                     color: #fff;
                     font-size: 49px;
                     margin: 0;
-                    right:50%;
+                    right: 50%;
                     top: 20%;
                 }
 
@@ -238,15 +267,15 @@ body {
                     bottom: 4%;
                     margin: 0;
                 }
+
                 img {
                     width: 45vh;
                     position: absolute;
                     top: 5%;
                     left: 55%;
 
-                    &:nth-child(odd){
+                    &:nth-child(odd) {
                         width: 29vh;
-                        
                         top: -8%;
                         left: 70%;
                     }
@@ -255,3 +284,114 @@ body {
         }
     }
 }
+
+#projectList {
+    display: grid;
+    width: 100vw;
+    grid-template-columns: auto auto auto;
+    grid-row-gap: 0;
+
+    div {
+        position: relative;
+        line-height: 0;
+
+        img {
+            width: 100%;
+        }
+
+        h2 {
+            @extend %laila;
+            position: absolute;
+            text-align: center;
+            font-size: 2em;
+            top: 25%;
+            left: 30%;
+            transform: translate(-15%, -50%);
+        }
+
+        p {
+            @extend %paragraph;
+            position: absolute;
+            color: rgba(0, 0, 0, 0.5);
+            text-align: center !important;
+            font-size: 1.4em;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}
+
+#moreText {
+    text-align: center;
+    padding: 50px;
+    z-index: 2;
+
+    h1 {
+        @extend %laila;
+        font-size: 2.2em;
+        padding: 0;
+        margin: 0;
+        color: $pink;
+
+        &:first-child {
+            color: #fff;
+        }
+    }
+
+    p {
+        @extend %laila;
+        padding-top: 40px;
+        color: #fff;
+
+        a {
+            text-decoration: none;
+            color: $pink;
+            cursor: pointer;
+
+            i {
+                padding-left: 7px;
+                font-weight: 400;
+            }
+        }
+    }
+}
+
+#contact {
+    .wrapper {
+        background-size: 100%;
+        background: $pale;
+        padding: 13vw 14vw 2vw 13vw;
+
+        .sectionName {
+            color: $dusk;
+
+        }
+    }
+    .title{
+        @extend %title;
+        color: $grey;
+    }
+
+    .desc{
+        color: $grey;
+    }
+}
+
+.contactContainer{
+    margin-top: 5vw;
+    margin-bottom: 90px;
+    width: 50%;
+}
+
+.contactLink{
+    font-family: $sans;
+    font-weight: 600;
+    line-height: 1.5;
+    display: flex;
+    justify-content: space-between;
+
+    a{
+        text-decoration: none;
+    }
+ }

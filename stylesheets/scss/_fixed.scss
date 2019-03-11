@@ -1,4 +1,5 @@
 #logo {
+    mix-blend-mode: difference;
     @extend %fix;
     top: 35px;
     left: 50px;
@@ -12,6 +13,7 @@
     @extend %fix;
     right: 1em;
     top: 35px;
+    mix-blend-mode: difference;
 
     ul {
         li {
@@ -60,6 +62,7 @@
 }
 
 #networks {
+    mix-blend-mode: difference;
     @extend %fix;
     right: 3em;
     bottom: 35px;
@@ -82,15 +85,16 @@
         }
 
         &:nth-child(2):hover {
-            color: #ffc02f;
+            color: #15B376;
         }
 
         &:nth-child(3):hover {
-            color: #007AB6;
+            color: #FF8549;
         }
 
         &:nth-child(4):hover {
-            color: #EA4C89;
+            color: #BEBFBD;
         }
+
     }
 }
