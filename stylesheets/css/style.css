@@ -58,23 +58,31 @@
     transform: rotate(0deg); } }
 
 #logo {
-  mix-blend-mode: difference;
   top: 35px;
   left: 50px;
   width: 75px;
   height: 75px;
-  background: url(/Portfolio/img/logo.png);
-  background-size: 100%; }
+  background: url(/Portfolio/img/logoIdle.png);
+  background-size: 100%;
+  opacity: 0.5;
+  -webkit-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s; }
+  #logo:hover {
+    background: url(/Portfolio/img/logoActive.png);
+    width: 75px;
+    height: 75px;
+    background-size: 100%;
+    opacity: 1; }
 
 #navbar {
   right: 1em;
-  top: 35px;
-  mix-blend-mode: difference; }
+  top: 35px; }
   #navbar ul li {
     display: inline;
     padding-right: 3em;
     font-family: "Shadows Into Light Two", cursive;
-    color: rgba(255, 255, 255, 0.5);
+    color: #a1a1a1;
     font-size: 1.4em;
     letter-spacing: 1.25px;
     cursor: pointer;
@@ -82,7 +90,7 @@
     -o-transition-duration: 0.2s;
     transition-duration: 0.2s; }
     #navbar ul li span {
-      color: rgba(255, 255, 255, 0.5);
+      color: #a1a1a1;
       -webkit-transition-duration: 0.5s;
       -o-transition-duration: 0.5s;
       transition-duration: 0.5s; }
@@ -402,7 +410,7 @@ a {
 #projectList {
   display: -ms-grid;
   display: grid;
-  width: 100vw;
+  width: 100%;
   -ms-grid-columns: auto auto auto;
   grid-template-columns: auto auto auto;
   grid-row-gap: 0; }

@@ -1,33 +1,41 @@
 #logo {
-    mix-blend-mode: difference;
     @extend %fix;
     top: 35px;
     left: 50px;
     width: 75px;
     height: 75px;
-    background: url(/Portfolio/img/logo.png);
+    background: url(/Portfolio/img/logoIdle.png);
     background-size: 100%;
+    opacity: 0.5;
+    transition-duration: 0.3s;
+
+    &:hover{
+        background: url(/Portfolio/img/logoActive.png);
+        width: 75px;
+    height: 75px;
+    background-size: 100%;
+    opacity: 1;
+    }
 }
 
 #navbar {
     @extend %fix;
     right: 1em;
     top: 35px;
-    mix-blend-mode: difference;
 
     ul {
         li {
             display: inline;
             padding-right: 3em;
             font-family: $shadows;
-            color: rgba(255, 255, 255, 0.5); 
+            color: rgb(161, 161, 161); 
             font-size: 1.4em;
             letter-spacing: 1.25px;
             cursor: pointer;
             transition-duration: 0.2s;
 
             span {
-                color: rgba(255, 255, 255, 0.5);
+                color: rgb(161,161,161);
                 transition-duration: 0.5s;
             }
 
